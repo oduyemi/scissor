@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissors</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="assets/animate.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
+
+    <script src="index.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
+    <script scr="assets/ajax/glm-ajax.js" defer></script>
+
+    <style>
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        }
+
+
+
+
+
+
+        @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+        }
+
+        .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+        }
+
+        .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+        }
+
+        .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        }
+    </style>
+</head>
+<body>
+    <main>
+                <!-- HEADER -->
+        <header class="header-bg">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div class="row top_section">
+                        <div class="col-md-12 d-md-flex d-none align-items-center justify-content-center">
+                            <div class="logo col-md-3  ms-5">
+                                <img src="assets/images/logo.png" alt="Logo" />
+                            </div>
+                            <div class="main_nav col-md-6 text-3 collapse navbar-collapse">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item"><a href="#" class="text-primary nav-link">My URLs</a></li>
+                                    <li class="nav-link nav-item dropdown">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                           Features
+                                        </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">One Feature</a></li>
+                                                <li><a class="dropdown-item" href="#">Another Feature</a></li>
+                                            </ul>
+                                        </li>
+                                    </li>
+                                    <li class="nav-item"><a href="#" class="text-dark nav-link">Pricing</a></li>
+                                    <li class="nav-item"><a href="#" class="text-dark nav-link">Analytics</a></li>
+                                    <li class="nav-item"><a href="#" class="text-dark nav-link">FAQs</a></li>
+                                </ul>
+                            </div>
+                            <div class="header_btn col-md-2">
+                                <a href="#" class="plain_btn">Log in</a>
+                                <button class="btn btn-primary py-1 my-2 ms-3 text-light mainbtn">Try for free</button>
+                            </div>
+                        </div>
+                    </div>
+
+                                            <!-- Mobile Menu -->
+                    <div class="mobilenav d-md-none d-block">
+                        <a href="#" class="bi me-2 ms-2" width="70" height="32"> <img src="assets/images/logo.png" alt="Logo" /></a>
+                        <div id="mobilelinks">
+                        <a href="#" class="active">My URLs</a>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Analytics</a>
+                        <a href="#">FAQs</a>
+                        </div>
+                        <a href="javascript:void(0);" class="icon" onclick="mobile_toggle()">
+                        <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+        </header>
+               
+                    
+                    <div class="">
+                      
+                </div>
+            </nav>
+        
+            <div class="intro text-center text-xl my-5">
+                <h1 class="animate__animated animate__flash">Optimize Your Online Experience With Our<br/>
+                    Advanced <span>URL Shortening </span> Solution
+                </h1>
+                <img src="assets/images/line.png" alt="line" id="line" />
+                <p>
+                    Personalize your shortened URLs to align with your brand identity.
+                    Utilize custom slugs,<br>branded links, and domain customization
+                    options to reinforce your brand presence and<br>enhance user engagement.
+                </p>
+                <div class="mb-5">
+                    <button class="mainbtn btn btn-primary py-1 my-2 text-light">Sign Up</button>
+                    <a href="#" class="plain_btn text-4 ms-3">Learn More</a>
+                </div>
+            </div>
+            
+                            <!--  BODY  -->
+        <section class="seamless my-5 d-md-block d-none">
+        <div class="seamless_container my-5 shadow-lg">     
+            <div class="parent_container  mx-auto d-flex justify-content-start align-items-center flex-wrap mt-5">
+                <div class="arrows">
+                    <img src="assets/images/link-2.png" alt="Link" width="55%" class="ms-5 img-responsive">
+                </div>
+                <div class="arrows">
+                    <img src="assets/images/link-2.png" alt="Link" width="80%" class="ms-1 img-responsive">
+                </div>
+                <div class="arrows">
+                    <img src="assets/images/link-2.png" alt="Link" width="80%" class="ms-1 img-responsive">
+                </div>
+                <div class="arrows">
+                    <ion-icon name="arrow-forward-outline" class="blueArrow w-full h-full"></ion-icon>
+                </div>
+                <div class="arrows ms-5">
+                    <img src="assets/images/link-2.png" alt="chain icon" width="80%" class="img-responsive">
+                </div> 
+                <div class="w-full text-center">
+                    <p class="seamless_p mx-auto">
+                        Seamlessly transform your long URLs into concise and sharable links with just few clicks. 
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <img src="assets/images/ecllipse1.png"  alt="3d feel" width="700" class="rect_3d img-responsive">
+                <img src="assets/images/rectangle.png" alt="rect" width="1185" class="rect img-responsive">
+            </div>  
+            </div>
+            </section>
+        
+        <section class="my-5 d-md-block d-none">
+        <div class="desc row gry d-flex align-items-center justify-content-center my-5">
+            <div class="col-md-5 desc_col">
+                <h1>One Stop.</h1><br>
+                <h1>Four </h1><span><h1 class="deeperBlue">Possiblities</h1></span>
+            </div>
+            <div class="col-md-1 spacer">
+                <h4 class="fw-bold">3M</h4>
+                <p>Active users</p>
+            </div>
+            <div class="col-md-1">
+                <h4 class="fw-bold">60M</h4>
+                <p>Links and QR codes created</p>
+            </div>
+            <div class="col-md-1">
+                <h4 class="fw-bold">1B</h4>
+                <p>Clicked and Scanned connections</p>
+            </div>
+            <div class="col-md-1">
+                <h4 class="fw-bold">300k</h4>
+                <p>App Integrations</p>
+            </div>
+        </div>
+
+            <div class="row desc d-flex align-items-center justify-content-center my-5">
+                <div class="col-md-5">
+                    <span><img src="assets/images/Line70.png" alt="Line70" class="img-responsive ms-5 ps-5">
+                    <h1 class="ms-3">Why Choose <span><h1 class="deeperBlue">Scissors</h1></span></h1></span>
+                    <p class="mx-auto" style="font-size:medium; width:60%; font-weight:400; font-size:medium">
+                        Scissors is the hub of everything that has to do with your link management.
+                        We shorten your URLs, allow you creating custom ones for your personal, business, event usage.
+                        Our swift QR code creation, management and usage tracking with advance analytics for all of
+                        these is second to none. 
+                    </p>
+                </div>
+                <div class="col-md-5 d-flex align-items-center justify-content-center flex-wrap flex-row">
+                <div class="innerFlexbox">
+                    <img src="assets/images/link-2.png" alt="" class="mb-3" width="10%"
+                    style="border:1px solid aliceblue; background-color: aliceblue; border-radius: 40%;">
+                    <h4 class="fw-bold">URL Shortening</h4>
+                    <p>Scissor allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirects.</p>
+                </div>
+                <div class="innerFlexbox">
+                    <img src="assets/images/edit.png" alt="" class="mb-3" width="10%"
+                    style="border:1px solid aliceblue; background-color: aliceblue; border-radius: 40%;">
+                    <h4 class="fw-bold">Custom URLs</h4>
+                    <p>With Scissor, you can create custom URLs, with the length you want! A solution for socials and businesses.</p>
+                </div>
+                <div class="innerFlexbox">
+                    <img src="assets/images/grid.png" alt="" class="mb-3" width="10%"
+                    style="border:1px solid aliceblue; background-color: aliceblue; border-radius: 40%;">
+                    <h4 class="fw-bold">QR Codes</h4>
+                    <p>Generate QR codes to your business, events. Bring your audience and customers to your doorstep with this scan and go solution.</p>
+                </div>
+                <div class="innerFlexbox">
+                    <img src="assets/images/activity.png" alt="" class="mb-3" width="10%"
+                    style="border:1px solid aliceblue; background-color: aliceblue; border-radius: 40%;">
+                    <h4 class="fw-bold">Data Analytics</h4>
+                    <p>Receive data on the usage of either your shortened URL, custom URLs or generated QR codes. Embedded to monitor progress.</p>
+                </div>
+
+
+
+                </div>
+               
+            </div>
+    
+            </section>
+
+            <section class="pricingIntro">
+                <div class="row mt-5">
+                    <div class="col-md-12 mx-auto text-center my-5">
+                        <span>
+                            <img src="assets/images/Line70.png" alt="Line70" class="img-responsive">
+                            <h1 class="ms-3 d-inline" style="font-size:xx-large">A <span><h1 class="deeperBlue d-inline">price perfect</h1></span> for your needs.</h1>
+                        </span>
+                        <div class="col-md-4 mx-auto text-center">
+                            <p class="ms-5" style="font-size: medium; width:90%">
+                                From catering for your personal, business, event, socials needs, you can be rest assured we have you in mind in our pricing.
+                            </p>
+                        </div>
+                </div>
+
+            <section class="pricing py-5">
+                <div class="container">
+                    <div class="row">
+                        <!-- Free Plan -->
+                        <div class="col-lg-4">
+                        <div class="card mb-5 mb-lg-0">
+                            <div class="card-body">
+                                <h4 class="card-title ms-5 mb-5">Basic</h4>
+                                <h3 class="card-price ms-5 my-3">Free</h3>
+                                <p class="ms-5">Free plan for all users</p>
+                                
+                                <ul class="fa-ul">
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited URL Shortening</li>
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Basic Link Analytics</li>
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Customizable Short Links</li>
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Standard Support</li>
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Ad-supported</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- Professional -->
+                        <div class="col-lg-4">
+                        <div class="card mb-5 mb-lg-0" id="pro">
+                            <div class="card-body">
+                                <h4 class="card-title ms-5 mb-5">Professional</h4>
+                                <h3 class="card-price ms-5 my-3">$15/month</span></h3>
+                                <p class="ms-5">Ideal for business creators</p>
+                            
+                                <ul class="fa-ul">
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Enhanced Link Analytics</strong></li>
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Custom Branded Domains</li>
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Advanced Link Customization</li>
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Pririty Support</li>
+                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Ad-free Experience</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- Team -->
+                        <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                            <h4 class="card-title ms-5 mb-5">Team</h4>
+                            <h3 class="card-price ms-5 my-3">$25/month</h3>
+                            <p class="ms-5">Share with up to 10 users</p>
+
+                            <ul class="fa-ul">
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Team Collaboration</strong></li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>User Roles and Permissions</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Enhanced Security</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>API Access</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Account Manager</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="col-md-6 mx-auto my-5 text-center">
+                        <button class="btn btn-outline-primary" style="font-size: x-small; font-weight: 500;">Get Custom Pricing</button>
+                        <button class="btn btn-primary mainbtn" style="font-size: x-small; font-weight: 500;">Select Pricing</button>
+                    </div>
+                    </div>
+                  </div>
+        </section>
+        <section>
+            <div class="row form_section">
+                <div class="col-md-5 mx-auto bg-white shadow-lg form_main">
+                    <form action="" method="" class="deeperBlue">
+                        <div class="form-group col-md-7 mx-auto">
+                            <input type="text" placeholder="&emsp; Paste URL here..."  class="form-control mt-5 mb-3 text-primary" style="border-radius: 50px; border-color:blue">
+                        </div>
+                        <div class="text-center form-group">
+                            <select name="domain" id="domain" style="border-radius: 50px; border-color:blue" class="px-3 py-1 me-3 ms-2">
+                                <option value="" class="text-primary">Choose Domain</option>
+                            </select>
+                            <input type="text" placeholder="&emsp; Type alias here" style="border-radius: 50px; border-color:blue" class="text-primary py-1">
+                        </div>
+                        <div class="formbtn text-center">
+                            <button class="btn btn-primary btn-lg mainbtn px-5 my-3 px-3">Trim URL &emsp;<span><ion-icon name="color-wand-outline"></ion-icon></span></button>
+                            <p class="text-primary mx-auto" style="width:68%">
+                                By clicking TrimURL, I agree to the <b>Terms of Service, Privacy Policy</b> and Use of Cookies.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="faq_section my-5">
+            <div class="container">
+                <div class="accordion accordion-borderless mx-auto" id="accordionFlushExampleX">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOneX">
+                        <button class="accordion-button" type="button" data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseOneX" aria-expanded="true" aria-controls="flush-collapseOneX">
+                          How does URL shortening work?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOneX" class="accordion-collapse collapse show"
+                        aria-labelledby="flush-headingOneX" data-mdb-parent="#accordionFlushExampleX">
+                        <div class="accordion-body">
+                            URL shortening works by taking a long URL and creating a shorter, condensed version
+                            that redirects to the original URL. When a user clicks on the shortened link,
+                            they are redirected to the intended destination.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwoX">
+                        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseTwoX" aria-expanded="false" aria-controls="flush-collapseTwoX">
+                          Is it necessary to create an account to use the URL shortening service?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwoX" class="accordion-collapse collapse" aria-labelledby="flush-headingTwoX"
+                        data-mdb-parent="#accordionFlushExampleX">
+                        <div class="accordion-body">
+                          Placeholder content for this accordion, which is intended to demonstrate the
+                          <code>.accordion-flush</code> class. This is the second item's accordion body.
+                          Let's imagine this being filled with some actual content.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwoX">
+                          <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+                            data-mdb-target="#flush-collapseTwoX" aria-expanded="false" aria-controls="flush-collapseTwoX">
+                            Are there any limitations on the number of URLs I can shorten?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwoX" class="accordion-collapse collapse" aria-labelledby="flush-headingTwoX"
+                          data-mdb-parent="#accordionFlushExampleX">
+                          <div class="accordion-body">
+                            Placeholder content for this accordion, which is intended to demonstrate the
+                            <code>.accordion-flush</code> class. This is the second item's accordion body.
+                            Let's imagine this being filled with some actual content.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwoX">
+                          <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+                            data-mdb-target="#flush-collapseTwoX" aria-expanded="false" aria-controls="flush-collapseTwoX">
+                            Can I customize the shortened URLs to reflect my brand or content?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwoX" class="accordion-collapse collapse" aria-labelledby="flush-headingTwoX"
+                          data-mdb-parent="#accordionFlushExampleX">
+                          <div class="accordion-body">
+                            Placeholder content for this accordion, which is intended to demonstrate the
+                            <code>.accordion-flush</code> class. This is the second item's accordion body.
+                            Let's imagine this being filled with some actual content.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwoX">
+                          <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+                            data-mdb-target="#flush-collapseTwoX" aria-expanded="false" aria-controls="flush-collapseTwoX">
+                            Can I track the performance of my shortened URLs?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwoX" class="accordion-collapse collapse" aria-labelledby="flush-headingTwoX"
+                          data-mdb-parent="#accordionFlushExampleX">
+                          <div class="accordion-body">
+                            Placeholder content for this accordion, which is intended to demonstrate the
+                            <code>.accordion-flush</code> class. This is the second item's accordion body.
+                            Let's imagine this being filled with some actual content.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwoX">
+                          <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+                            data-mdb-target="#flush-collapseTwoX" aria-expanded="false" aria-controls="flush-collapseTwoX">
+                            How secure is the URL shortening service? Are the shortened links protected against spam or malicious activity?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwoX" class="accordion-collapse collapse" aria-labelledby="flush-headingTwoX"
+                          data-mdb-parent="#accordionFlushExampleX">
+                          <div class="accordion-body">
+                            Placeholder content for this accordion, which is intended to demonstrate the
+                            <code>.accordion-flush</code> class. This is the second item's accordion body.
+                            Let's imagine this being filled with some actual content.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwoX">
+                          <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+                            data-mdb-target="#flush-collapseTwoX" aria-expanded="false" aria-controls="flush-collapseTwoX">
+                            What is a QR code and what can it do?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwoX" class="accordion-collapse collapse" aria-labelledby="flush-headingTwoX"
+                          data-mdb-parent="#accordionFlushExampleX">
+                          <div class="accordion-body">
+                            Placeholder content for this accordion, which is intended to demonstrate the
+                            <code>.accordion-flush</code> class. This is the second item's accordion body.
+                            Let's imagine this being filled with some actual content.
+                          </div>
+                        </div>
+                      </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThreeX">
+                        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseThreeX" aria-expanded="false" aria-controls="flush-collapseThreeX">
+                          Is there an API available for integrating the URL shortening service into my own applications or websites?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThreeX" class="accordion-collapse collapse" aria-labelledby="flush-headingThreeX"
+                        data-mdb-parent="#accordionFlushExampleX">
+                        <div class="accordion-body">
+                          Placeholder content for this accordion, which is intended to demonstrate the
+                          <code>.accordion-flush</code> class. This is the third item's accordion body.
+                          Nothing more exciting happening here in terms of content, but just filling up
+                          the space to make it look, at least at first glance, a bit more representative
+                          of how this would look in a real-world application.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <section class="link_optimization my-5">
+            <div class="row optimize">
+                <div class="col-md-6 text-center mx-auto">
+                    <h1 class="my-4">Revolutionizing Link Optimization</h1>
+                    <button class="btn btn-primary btn-lg mainbtn">Get Started</button>
+                </div>
+            </div>
+        </section>
+        
+
+
+                        <!--  FOOTER  -->
+
+        <section class="footer mt-5">
+        <footer>
+            <div class="footer_main row d-flex align-items-start justify-content-between">
+                <div class="footerlogo col-md-3 mx-auto">
+                    <img src="assets/images/logo_black.png" alt="Logo" style="width: 100%; max-width: 150px" />
+                    <div class="ms-3 socialIcons">
+                        <img src="assets/images/twi.png" alt="Twitter" width="5%" />
+                        <img src="assets/images/ig.png" alt="Instagram" width="5%" />
+                        <img src="assets/images/lin.png" alt="LinkedIn" width="5%" />
+                        <img src="assets/images/fb.png" alt="Facebook" width="5%" />
+                    </div>
+                </div>
+        
+                <div class="col-md-8 d-flex align-items-start justify-content-between flex-wrap flex-row">
+                    <div class="footerFlexbox">
+                        <h4 class="fw-bold">Why Scissor?</h4>
+                        <ul>
+                            <li>Scissor 101</li>
+                            <li>Integrations &amp; API</li>
+                            <li>Pricing</li>
+                        </ul>
+                    </div>
+                    <div class="footerFlexbox">
+                        <h4 class="fw-bold">Solutions</h4>
+                        <ul>
+                            <li>Social Media</li>
+                            <li>Digital Marketing</li>
+                            <li>Customer Service</li>
+                            <li>For Developers</li>
+                        </ul>
+                    </div>
+                    <div class="footerFlexbox">
+                        <h4 class="fw-bold">Products</h4>
+                        <ul>
+                            <li>Link Management</li>
+                            <li>QR Codes</li>
+                            <li>Link-in-bio</li>
+                        </ul>
+                    </div>
+                    <div class="footerFlexbox">
+                        <h4 class="fw-bold">Company</h4>
+                        <ul>
+                            <li>About Scissor</li>
+                            <li>Careers</li>
+                            <li>Partners</li>
+                            <li>Press</li>
+                            <li>Contact</li>
+                            <li>Review</li>
+                        </ul>
+                    </div>
+                    <div class="footerFlexbox">
+                        <h4 class="fw-bold">Resources</h4>
+                        <ul>
+                            <li>Blog</li>
+                            <li>Resource Library</li>
+                            <li>Developers</li>
+                            <li>App Connectors</li>
+                            <li>Support</li>
+                            <li>Trust Centers</li>
+                            <li>Browser Extensions</li>
+                            <li>Mobile App</li>
+                        </ul>
+                    </div>
+                    <div class="footerFlexbox part2">
+                        <h4 class="fw-bold">Features</h4>
+                        <ul>
+                            <li>Branded Links</li>
+                            <li>Mobile Link</li>
+                            <li>Campaign</li>
+                            <li>Management &amp; Analytics</li>
+                            <li>QR Code Generation</li>
+                        </ul>
+                    </div>
+                    <div class="footerFlexbox part2">
+                        <h4 class="fw-bold">Legal</h4>
+                        <ul>
+                            <li>Privacy Policy</li>
+                            <li>Cookie Policy</li>
+                            <li>Terms of Service</li>
+                            <li>Acceptable Use Policy</li>
+                            <li>Code of Conduct</li>
+                        </ul>
+                </div>
+            </div>               
+        </footer>
+    </section>
+
+
+
+
+
+
+
+
+            </div>
+    </main>
+</body>
+</html>
